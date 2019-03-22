@@ -5,6 +5,7 @@ eureka:
   instance:
     hostname: localhost
   client:
+    # 声明自己是服务, 不是客户端
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:

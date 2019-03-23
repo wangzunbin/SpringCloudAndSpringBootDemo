@@ -17,3 +17,14 @@ product-service:
     ribbon:
       # 随机的, 也可以设置权重的WeightedResponseTimeRule
       NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+# 即使内容提供者设置了1s, 但是由于熔断器Hystrix的原因(默认时间为1s), 所以也会请求超时
+feign:
+  client:
+    config:
+      default:
+#        一般设置2s
+        connectTimeout: 2000
+#        一般设置2s
+        readTimeout: 2000

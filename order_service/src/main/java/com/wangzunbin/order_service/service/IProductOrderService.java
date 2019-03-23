@@ -13,5 +13,5 @@ import com.wangzunbin.order_service.domain.ProductOrder;
 public interface IProductOrderService {
 
 
-    public ProductOrder save(Integer userId, Integer productId);
+     ProductOrder save(Integer userId, Integer productId);
 }

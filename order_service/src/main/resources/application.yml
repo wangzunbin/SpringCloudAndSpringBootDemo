@@ -11,3 +11,9 @@ eureka:
 spring:
   application:
     name: order-service
+
+# 定义规则
+product-service:
+    ribbon:
+      # 随机的, 也可以设置权重的WeightedResponseTimeRule
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

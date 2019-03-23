@@ -44,11 +44,14 @@
             <version>1.18.6</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--Feign里面也有熔断器-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+        <!--如果主要使用到@HystrixCommand 这个注解, 就要使用到下面的熔断器-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>

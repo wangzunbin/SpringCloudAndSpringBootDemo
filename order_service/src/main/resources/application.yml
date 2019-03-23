@@ -21,6 +21,8 @@ product-service:
 
 # 即使内容提供者设置了1s, 但是由于熔断器Hystrix的原因(默认时间为1s), 所以也会请求超时
 feign:
+  hystrix:
+    enabled: true
   client:
     config:
       default:

@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * ClassName:ProductController  <br/>
  * Funtion: ${TODD} <br/>
@@ -36,11 +34,11 @@ public class ProductController {
     @RequestMapping("find")
     public Object findByid(Integer id){
 
-        try {
+      /*  try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         Product product = productService.findById(id);
         Product product1 = new Product();
         BeanUtils.copyProperties(product, product1);

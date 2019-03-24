@@ -32,6 +32,24 @@ feign:
     config:
       default:
 #        一般设置2s
-        connectTimeout: 2000
+        connectTimeout: 4000
 #        一般设置2s
-        readTimeout: 2000
+        readTimeout: 4000
+
+
+#hystrix: 关闭超时时间(不推荐使用)
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+
+#  设置超时时间(推荐使用)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000

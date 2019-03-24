@@ -19,6 +19,7 @@ zuul:
     order-service: /apigateway/**
 #  需求 ：不想让默认的服务对外暴露接口
 #  /order-service/api/v1/order/save
-#    ignored-patterns:  /*-service/api/v1/**
-    ignored-services: order-service
-#    ignored-services: product-service
+    ignored-patterns:  /*-service/api/v1/**
+#  下面不会怎么用, 一般都是用上面的
+#  ignored-services: product-service
+#    ignored-services: order-service

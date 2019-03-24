@@ -53,3 +53,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 4000
+
+# 监控接口请求情况
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

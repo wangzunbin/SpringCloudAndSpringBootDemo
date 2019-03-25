@@ -6,24 +6,24 @@ spring:
   application:
     name: api-gateway
 
-#Ö¸¶¨×¢²áÖĞĞÄµØÖ·
+#æŒ‡å®šæ³¨å†Œä¸­å¿ƒåœ°å€
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-# ÉèÖÃ¶ÔÍâµÄ·ÃÎÊÂ·¾¶
+# è®¾ç½®å¯¹å¤–çš„è®¿é—®è·¯å¾„
 zuul:
   routes:
-#    ÀïÃæÊÇÓÃÒ»¸ömap´æ´¢µÄ, ºóÃæµÄ»á¸²¸ÇÇ©ÃûµÄ
+#    é‡Œé¢æ˜¯ç”¨ä¸€ä¸ªmapå­˜å‚¨çš„, åé¢çš„ä¼šè¦†ç›–ç­¾åçš„
     product-service: /apigateway/product/**
     order-service: /apigateway/order/**
   sensitive-Headers:
-#    Ä¬ÈÏÊÇCookieÊÇÄÃ²»µ½µÄ, µ«ÊÇÍ¨¹ıÏÂÃæµÄÉèÖÃ¿ÉÒÔ»ñÈ¡µÃµ½
-#  ĞèÇó £º²»ÏëÈÃÄ¬ÈÏµÄ·şÎñ¶ÔÍâ±©Â¶½Ó¿Ú
+#    é»˜è®¤æ˜¯Cookieæ˜¯æ‹¿ä¸åˆ°çš„, ä½†æ˜¯é€šè¿‡ä¸‹é¢çš„è®¾ç½®å¯ä»¥è·å–å¾—åˆ°
+#  éœ€æ±‚ ï¼šä¸æƒ³è®©é»˜è®¤çš„æœåŠ¡å¯¹å¤–æš´éœ²æ¥å£
 #  /order-service/api/v1/order/save
   ignored-patterns:  /*-service/api/v1/**
 
-#  ÏÂÃæ²»»áÔõÃ´ÓÃ, Ò»°ã¶¼ÊÇÓÃÉÏÃæµÄ
+#  ä¸‹é¢ä¸ä¼šæ€ä¹ˆç”¨, ä¸€èˆ¬éƒ½æ˜¯ç”¨ä¸Šé¢çš„
   #  ignored-services: product-service
 #    ignored-services: order-service

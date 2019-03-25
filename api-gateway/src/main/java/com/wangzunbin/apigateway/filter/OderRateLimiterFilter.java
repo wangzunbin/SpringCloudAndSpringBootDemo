@@ -34,11 +34,11 @@ public class OderRateLimiterFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        RequestContext currentContext = RequestContext.getCurrentContext();
+      /*  RequestContext currentContext = RequestContext.getCurrentContext();
         String requestURI = currentContext.getRequest().getRequestURI();
           if("/apigateway/order/api/v1/order/save".equalsIgnoreCase(requestURI)) {
             return true;
-        }
+        }*/
         return false;
     }
 

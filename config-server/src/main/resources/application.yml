@@ -1,6 +1,20 @@
 spring:
   application:
     name: config-server
+
+  #git配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/wangzunbin/config_cloud
+          username: 905192187@qq.com
+          password: wang2965058
+          #超时时间
+#
+#            #分支
+#          default-label: master
+
 server:
   port: 9100
 

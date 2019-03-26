@@ -5,6 +5,7 @@ import com.wangzunbin.product_service.service.IProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/product")
+@RefreshScope
 public class ProductController {
 
     @Value("${server.port}")
     private String port;
+
+    @Value("${env}")
+    private String env;
 
     @Autowired
     private IProductService productService;
@@ -42,7 +47,7 @@ public class ProductController {
         Product product = productService.findById(id);
         Product product1 = new Product();
         BeanUtils.copyProperties(product, product1);
-        product1.setName(product1.getName() + " data from port=" + port);
+        product1.setName(product1.getName() + " data from port=" + port + ", env=" + env);
         return product1;
     }
 }

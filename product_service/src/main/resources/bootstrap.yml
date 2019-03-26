@@ -22,3 +22,14 @@ spring:
           #label: test
       profile: test
 
+  rabbitmq:
+    host: 192.168.1.49
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

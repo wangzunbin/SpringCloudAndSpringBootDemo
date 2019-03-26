@@ -1,5 +1,3 @@
-#server:
-#  port: 8771
 
 #指定注册中心地址
 eureka:
@@ -11,8 +9,6 @@ eureka:
 spring:
   application:
     name: product-service
-  zipkin:
-    base-url: http://192.168.1.49:9411/
   cloud:
     config:
       discovery:
@@ -21,15 +17,3 @@ spring:
           #建议用lable去区分环境，默认是lable是master分支
           #label: test
       profile: test
-
-  rabbitmq:
-    host: 192.168.1.49
-    port: 5672
-    username: guest
-    password: guest
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
